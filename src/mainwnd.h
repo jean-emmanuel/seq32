@@ -44,6 +44,7 @@ class mainwnd : public Gtk::Window, public performcallback
     virtual void on_grouplearnchange(bool state);
 
     friend void set_insensitive_menu_and_song(bool a_running);
+    friend void mainwnd_toggle_song_mode();
 
 private:
 
@@ -143,4 +144,5 @@ public:
 };
 
 extern void set_insensitive_menu_and_song(bool a_running);
+extern void mainwnd_toggle_song_mode();
 

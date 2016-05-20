@@ -53,6 +53,14 @@ set_insensitive_menu_and_song(bool a_running)
     }
 }
 
+void
+mainwnd_toggle_song_mode()
+{
+    if (gs_mainwnd_pointer != nullptr)
+    {
+        gs_mainwnd_pointer->toggle_song_mode();
+    }
+}
 
 // tooltip helper, for old vs new gtk...
 #if GTK_MINOR_VERSION >= 12
@@ -362,9 +370,6 @@ mainwnd::timer_callback(  )
         m_perf_edit->toggle_jack();
 #endif // JACK_SUPPORT
 
-    if (m_button_mode->get_active() != global_song_start_mode)
-        m_button_mode->set_active(global_song_start_mode);
-
     return true;
 }
 
@@ -388,7 +393,6 @@ mainwnd::toggle_song_mode()
     if(!global_is_running)
     {
         m_button_mode->set_active( ! m_button_mode->get_active() );
-        m_mainperf->set_left_frame();
     }
 }
 

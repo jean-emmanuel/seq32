@@ -512,13 +512,7 @@ void perform::set_start_from_perfedit( bool a_start )
 
 void perform::toggle_song_mode()
 {
-    if(global_song_start_mode)
-        global_song_start_mode = false;
-    else
-    {
-        global_song_start_mode = true;
-        set_left_frame();
-    }
+    mainwnd_toggle_song_mode();
 }
 
 void perform::toggle_jack_mode()
